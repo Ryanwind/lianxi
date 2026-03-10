@@ -11,7 +11,7 @@ const siteData = {
         // 模式一：纯文字拼装 Logo（目前正在使用的模式）
         logoLetter: "H",                 // 黄色方块里的首字母
         logoText: "Haiyi Machinery",     // 主标题
-        logoSuffix: ".PARTS",            // 蓝色的后缀（如果不需要，可以改成 "" 留空）
+        logoSuffix: "-泉州海逸机械有限公司",            // 蓝色的后缀（如果不需要，可以改成 "" 留空）
         
         // 模式二：真实图片 Logo（如果你有设计好的图片Logo，把图片路径填在这里）
         // 示例: "images/logo.png" 或者 "https://你的域名.com/logo.png"
@@ -295,3 +295,4 @@ function renderContact() {
     `;
     document.getElementById("contact-container").innerHTML = html;
 }
+
