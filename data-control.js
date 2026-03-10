@@ -1,104 +1,103 @@
 // data-control.js
-// 网站全局数据与控制器
+// Global Data and Control Center
 
 const siteData = {
-    // 1. 基础信息与 SEO 设置
+    // 1. Basic Info & SEO
     brand: {
-        name: "海逸工程机械 Machinery",
+        name: "SolidTrack Machinery",
         shortName: "STM Parts",
         logoText: "SOLIDTRACK",
-        themeColor: "#FDB813", // CAT黄
-        accentColor: "#0033A0", // 小松蓝
+        themeColor: "#FDB813", // CAT Yellow
+        accentColor: "#0033A0", // Komatsu Blue
     },
     seo: {
-        defaultKeywords: "挖掘机配件, 底盘件, Undercarriage parts, 支重轮, 履带, 驱动齿, 工程机械",
+        defaultKeywords: "Excavator parts, Undercarriage parts, Track rollers, Track chains, Sprockets, Heavy machinery, Quanzhou undercarriage",
         author: "SolidTrack Engineering Team"
     },
     contact: {
-        phone: "+86 400-888-9999",
-        email: "sales@solidtrack-parts.com",
-        address: "江苏省徐州市经济技术开发区重工路88号",
-        whatsapp: "+86 13800138000"
+        address: "Pudang Industrial Zone, Xiamei, Nan'an, Quanzhou, Fujian Province, China",
+        zipcode: "362000",
+        phone: "0595-86769058 / +86 13506029588",
+        fax: "0595-86769058",
+        email: "sales@solidtrack-parts.com"
     },
     navigation: [
-        { name: "首页 HOME", url: "index.html" },
-        { name: "底盘件产品 PRODUCTS", url: "products.html" },
-        { name: "维修技术支持 BLOG", url: "blog.html" },
-        { name: "联系我们 CONTACT", url: "contact.html" }
+        { name: "HOME", url: "index.html" },
+        { name: "PRODUCTS", url: "products.html" },
+        { name: "MAINTENANCE BLOG", url: "blog.html" },
+        { name: "CONTACT US", url: "contact.html" }
     ],
 
-    // 2. 产品数据库 (Undercarriage 热门品类)
+    // 2. Product Database (Undercarriage Categories)
     categories: [
         {
             id: "track-chains",
-            title: "履带总成 & 链轨 (Track Chains/Links)",
-            desc: "高频淬火锻造，抗拉强度提升40%，适配20-50吨级主流挖掘机。",
+            title: "Track Chains & Link Assemblies",
+            desc: "High-frequency induction forging increases tensile strength by 40%. Suitable for 20-50 ton mainstream excavators.",
             products: [
-                { name: "CAT 320/323 重型履带链轨", desc: "45节，节距190mm。采用深层感应硬化技术，极佳的耐磨性。", specs: "节距: 190mm | 节数: 45 | 适用: CAT 320/323", img: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=600&q=80" },
-                { name: "Komatsu PC200-8 履带总成", desc: "干式/润滑脂密封可选，有效防止泥沙侵入销轴。", specs: "节距: 190mm | 节数: 45 | 适用: PC200-8/PC220", img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80" },
-                { name: "Hitachi ZX200-3 链轨节总成", desc: "加厚链轨节设计，专为矿山、采石场等高冲击工况研发。", specs: "节距: 190mm | 节数: 46 | 适用: ZX200/ZX210", img: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=600&q=80" }
+                { name: "CAT 320/323 Heavy Duty Track Chain", desc: "Deep induction hardened for superior wear resistance in abrasive conditions.", specs: "Pitch: 190mm | Links: 45 | Fit: CAT 320/323", img: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=600&q=80" },
+                { name: "Komatsu PC200-8 Track Link Ass'y", desc: "Available in dry or grease-sealed options to prevent mud and sand intrusion into the pins.", specs: "Pitch: 190mm | Links: 45 | Fit: PC200-8/PC220", img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80" },
+                { name: "Hitachi ZX200-3 Track Chain", desc: "Thickened link design, developed specifically for high-impact conditions like mining.", specs: "Pitch: 190mm | Links: 46 | Fit: ZX200/ZX210", img: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=600&q=80" }
             ]
         },
         {
             id: "track-rollers",
-            title: "支重轮 & 托链轮 (Track/Carrier Rollers)",
-            desc: "双金属浮动油封，终身免维护润滑，承载力极强。",
+            title: "Track Rollers & Carrier Rollers",
+            desc: "Equipped with bimetallic floating oil seals for lifetime maintenance-free lubrication and maximum load capacity.",
             products: [
-                { name: "PC300-7 锻造支重轮 (底轮)", desc: "轮体采用50Mn硼钢锻造，双向受力设计，防止履带脱轨。", specs: "材质: 50Mn | 热处理: 整体淬火 | 重量: 45kg", img: "https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?auto=format&fit=crop&w=600&q=80" },
-                { name: "CAT 336 托链轮 (顶轮)", desc: "加强型轮轴与高精度双锥度密封，保障高速运转不漏油。", specs: "类型: 单法兰 | 材质: 40Cr | 适用: CAT 336D/E", img: "https://images.unsplash.com/photo-1537151641189-e685b67326c5?auto=format&fit=crop&w=600&q=80" },
-                { name: "Volvo EC210B 支重轮总成", desc: "原厂标准公差，高纯度耐磨铜套，大幅降低摩擦系数。", specs: "法兰: 双边 | 表面硬度: HRC52-58 | 重量: 32kg", img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" }
+                { name: "PC300-7 Forged Track Roller", desc: "Forged 50Mn boron steel body with bi-directional load-bearing design to prevent track derailment.", specs: "Material: 50Mn | Treatment: Quenched | Weight: 45kg", img: "https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?auto=format&fit=crop&w=600&q=80" },
+                { name: "CAT 336 Carrier Roller", desc: "Reinforced shaft and high-precision dual-cone sealing ensure no oil leakage at high speeds.", specs: "Type: Single Flange | Material: 40Cr | Fit: CAT 336", img: "https://images.unsplash.com/photo-1537151641189-e685b67326c5?auto=format&fit=crop&w=600&q=80" },
+                { name: "Volvo EC210B Track Roller", desc: "OEM standard tolerance with high-purity wear-resistant copper sleeve to reduce friction.", specs: "Flange: Double | Hardness: HRC52-58 | Weight: 32kg", img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" }
             ]
         },
         {
             id: "sprockets",
-            title: "驱动齿 & 引导轮 (Sprockets & Idlers)",
-            desc: "高精度铸压与齿面感应淬火，确保完美啮合，延长行走马达寿命。",
+            title: "Sprockets & Front Idlers",
+            desc: "Precision casting and induction-hardened teeth guarantee perfect meshing and extend travel motor life.",
             products: [
-                { name: "CAT 320 驱动齿圈 (Sprocket Rim)", desc: "深齿面淬火，抗点蚀与剥落，精确引导履带运转无异响。", specs: "齿数: 21 | 安装孔: 16孔 | 材质: 35MnB", img: "https://images.unsplash.com/photo-1563452619267-c404ebfaecbf?auto=format&fit=crop&w=600&q=80" },
-                { name: "Komatsu PC200 引导轮总成 (Idler)", desc: "带涨紧装置接口，重型前置引导轮，内腔储油量增加20%。", specs: "类型: 铸造 | 轴径: 65mm | 包含: 轮体+轴+支架", img: "https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&w=600&q=80" },
-                { name: "Kobelco SK200-8 驱动轮整体", desc: "整体式铸钢驱动轮，消除焊接应力，矿山破碎作业首选。", specs: "齿数: 21 | 安装孔: 18孔 | 重量: 68kg", img: "https://images.unsplash.com/photo-1578319439584-104c94d3fdba?auto=format&fit=crop&w=600&q=80" }
+                { name: "CAT 320 Sprocket Rim", desc: "Deep tooth surface hardening protects against pitting and peeling, guiding the track silently.", specs: "Teeth: 21 | Holes: 16 | Material: 35MnB", img: "https://images.unsplash.com/photo-1563452619267-c404ebfaecbf?auto=format&fit=crop&w=600&q=80" },
+                { name: "Komatsu PC200 Idler Assembly", desc: "Heavy-duty front idler with a 20% increased internal oil storage capacity.", specs: "Type: Casting | Shaft Dia: 65mm | Includes Brackets", img: "https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&w=600&q=80" },
+                { name: "Kobelco SK200-8 Sprocket", desc: "Integral cast steel drive wheel, eliminating welding stress. Ideal for quarrying operations.", specs: "Teeth: 21 | Holes: 18 | Weight: 68kg", img: "https://images.unsplash.com/photo-1578319439584-104c94d3fdba?auto=format&fit=crop&w=600&q=80" }
             ]
         }
     ],
 
-    // 3. 博客数据库 (长篇维修指南)
+    // 3. Blog Database (Technical Guides)
     blogs: [
         {
             id: "blog-1",
-            title: "挖掘机底盘件（Undercarriage）日常保养与磨损自检指南",
-            date: "2026-03-05",
-            author: "资深底盘件工程师 张工",
+            title: "Excavator Undercarriage: Daily Maintenance & Wear Inspection Guide",
+            date: "March 5, 2026",
+            author: "Senior Engineer Team",
             img: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&w=1200&q=80",
             content: `
-                <p class="mb-4">在挖掘机的全生命周期中，底盘件（Undercarriage）的维修和更换成本占据了整机维护费用的很大一部分（通常占保养总成本的 50% 左右）。掌握科学的自检和保养方法，能有效延长履带、支重轮和驱动齿的使用寿命。</p>
-                <h3 class="text-xl font-bold mt-6 mb-3 text-gray-900 border-l-4 border-yellow-500 pl-3">1. 履带涨紧度（Track Tension）的检查与调整</h3>
-                <p class="mb-4">履带过紧会导致行走马达负荷增大，加速链轨节销套和驱动齿的异常磨损；履带过松则容易导致脱轨（掉链子）并在高速行走时拍打机架。<strong>正确测量方法：</strong>将挖掘机单边撑起，使履带自然下垂。测量中间位置支重轮底部与履带板上表面的距离。20吨级挖机正常间隙应在 <strong>300mm - 330mm</strong> 之间。如在泥泞或粘土环境作业，建议将履带调松 10-20mm 以便于排泥。</p>
-                <h3 class="text-xl font-bold mt-6 mb-3 text-gray-900 border-l-4 border-yellow-500 pl-3">2. 支重轮（Track Rollers）的漏油预警</h3>
-                <p class="mb-4">支重轮是“终身润滑”部件，内部采用浮动油封。每天开机前应绕机目测检查：如果发现支重轮端面有新鲜的油泥混合物，或者某个轮体在运转时发出干涩的金属摩擦尖叫声（Squeaking），说明油封已损坏内部干涸。此时应立即停机更换，否则轮轴会迅速抱死被磨断，甚至牵连损坏整条链轨。</p>
-                <h3 class="text-xl font-bold mt-6 mb-3 text-gray-900 border-l-4 border-yellow-500 pl-3">3. 驱动齿与链轨的“咬合”检查</h3>
-                <p class="mb-4">驱动齿（Sprocket）的齿面磨损极限通常为 6mm 左右。当发现齿尖变得像“刀刃”一样锋利时，必须进行更换。需要特别注意的是：<strong>切忌将全新的驱动齿与严重拉长的旧链轨配合使用！</strong> 节距不匹配会导致新齿在 200 小时内被迅速啃噬报废。更换底盘件应遵循“成套更换”或“成对更换”的原则。</p>
+                <p class="mb-4">In the lifecycle of an excavator, undercarriage maintenance and replacement account for a significant portion of total upkeep costs (often around 50%). Mastering proper inspection methods can significantly extend the lifespan of your tracks, rollers, and sprockets.</p>
+                <h3 class="text-xl font-bold mt-6 mb-3 text-gray-900 border-l-4 border-[#FDB813] pl-3">1. Track Tension Inspection and Adjustment</h3>
+                <p class="mb-4">A track that is too tight increases the load on the travel motor and accelerates the wear of the track pins, bushings, and sprockets. Conversely, a loose track can derail and slap against the frame. <strong>Proper Measurement:</strong> Lift one side of the excavator so the track sags naturally. Measure the distance from the bottom of the lowest track roller to the top of the track shoe. For a 20-ton excavator, the normal clearance is <strong>300mm - 330mm</strong>. In muddy or clay environments, loosen it by an additional 10-20mm to allow mud packing.</p>
+                <h3 class="text-xl font-bold mt-6 mb-3 text-gray-900 border-l-4 border-[#FDB813] pl-3">2. Track Roller Leakage Warning Signs</h3>
+                <p class="mb-4">Track rollers are "lifetime lubricated" components featuring floating oil seals. Perform a daily visual walk-around: if you notice fresh oil mixed with mud on the end face of a roller, or hear a high-pitched metallic squeaking noise during travel, the oil seal has failed and the internal cavity is dry. Shut down and replace it immediately to prevent the shaft from seizing and damaging the entire track chain.</p>
+                <h3 class="text-xl font-bold mt-6 mb-3 text-gray-900 border-l-4 border-[#FDB813] pl-3">3. Sprocket and Track Chain "Meshing"</h3>
+                <p class="mb-4">The wear limit for sprocket teeth is typically around 6mm. When the tips become as sharp as a "knife blade," replacement is mandatory. <strong>Crucial Rule:</strong> Never pair a brand-new sprocket with a severely stretched old track chain! The mismatched pitch will destroy the new sprocket within 200 hours. Always replace undercarriage components in sets or pairs.</p>
             `
         },
         {
             id: "blog-2",
-            title: "如何正确更换挖掘机引导轮（Idler）与履带涨紧油缸修复",
-            date: "2026-02-28",
-            author: "液压与底盘维修专家 李工",
+            title: "Safety Guide: Replacing Excavator Idlers & Track Adjuster Cylinders",
+            date: "February 28, 2026",
+            author: "Hydraulic Maintenance Expert",
             img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80",
             content: `
-                <p class="mb-4">引导轮（Idler）位于履带车架前端，主要作用是引导履带正确卷绕，并与后方的涨紧油缸（Track Adjuster Cylinder）及缓冲弹簧相连，吸收行走时的冲击力。更换引导轮是一项需要极高安全意识的重体力作业。</p>
-                <h3 class="text-xl font-bold mt-6 mb-3 text-gray-900 border-l-4 border-yellow-500 pl-3">警告：高压黄油的安全释放（极其重要！）</h3>
-                <p class="mb-4">涨紧油缸内注满了高压黄油，压力可达数百巴。在拆卸引导轮之前，必须先将履带放松。<strong>绝对不能直接完全拧下泄压阀！</strong> 正确做法是：使用加长套筒，站在侧面（身体严禁正对阀口），缓慢逆时针旋转单向阀（Grease Valve）最多 1 到 1.5 圈。黄油会从排油槽溢出，此时履带会逐渐松弛。如果拧开后黄油不排出，说明内部油路堵塞，需呼叫专业人员使用液压顶设备处理，强行拆卸极易引发部件如炮弹般飞出造成致命伤亡。</p>
-                <h3 class="text-xl font-bold mt-6 mb-3 text-gray-900 border-l-4 border-yellow-500 pl-3">拆卸与安装引导轮的步骤</h3>
-                <p class="mb-4">1. 拆下履带主销（Master Pin），将履带完全平铺于地面。<br>2. 用起重设备（吊车或另一台挖机）吊住引导轮总成，向外平移抽出。连同涨紧油缸一起抽出。<br>3. 检查缓冲弹簧是否断裂，油缸活塞杆表面是否拉伤。如活塞杆有深度划痕，即使换了新油封也会再次漏油，建议直接更换涨紧油缸总成。<br>4. 在安装新的引导轮之前，务必清理车架导轨（Track Frame Guides）上的硬化泥块和铁屑，必要时堆焊修复磨损过度的导轨，确保引导轮上下浮动顺畅，防止偏磨。</p>
-                <h3 class="text-xl font-bold mt-6 mb-3 text-gray-900 border-l-4 border-yellow-500 pl-3">排气与初步涨紧</h3>
-                <p class="mb-4">安装复位并接好履带销后，使用气动黄油枪向单向阀加注黄油。期间可让挖机悬空履带缓慢正反转，使泥沙排出且各部件就位，最后按照标准间距完成最终涨紧。</p>
+                <p class="mb-4">The front idler guides the track into the roller frame and works with the track adjuster cylinder and recoil spring to absorb impact. Replacing it is a heavy-duty task that requires strict safety protocols.</p>
+                <h3 class="text-xl font-bold mt-6 mb-3 text-gray-900 border-l-4 border-[#FDB813] pl-3">WARNING: High-Pressure Grease Release</h3>
+                <p class="mb-4">The track adjuster cylinder is filled with high-pressure grease (hundreds of bars). Before removing the idler, you must loosen the track. <strong>NEVER completely unscrew the grease relief valve!</strong> Correct procedure: Use a long socket wrench, stand to the side (never directly facing the valve), and slowly turn the grease valve counter-clockwise by a maximum of 1 to 1.5 turns. The grease will slowly extrude, slackening the track. If grease does not escape, the internal channel is blocked; call a professional. Forcing disassembly can cause parts to shoot out like projectiles, causing fatal injuries.</p>
+                <h3 class="text-xl font-bold mt-6 mb-3 text-gray-900 border-l-4 border-[#FDB813] pl-3">Disassembly and Installation Steps</h3>
+                <p class="mb-4">1. Remove the master pin and lay the track flat on the ground.<br>2. Use a crane or another excavator to sling the idler assembly, sliding it out horizontally along with the adjuster cylinder.<br>3. Inspect the recoil spring for cracks and the cylinder rod for scoring. Deep scratches on the rod will destroy new seals instantly; replace the entire cylinder if damaged.<br>4. Before installing the new idler, thoroughly clean the track frame guides. Hardened mud or metal shavings will prevent the idler from sliding back and forth properly, leading to uneven wear.</p>
             `
         }
     ]
 };
 
-// ================= 全局功能渲染引擎 =================
+// ================= Global Rendering Engine =================
 
 document.addEventListener("DOMContentLoaded", () => {
     const pageId = document.body.id;
@@ -106,24 +105,21 @@ document.addEventListener("DOMContentLoaded", () => {
     renderHeader();
     renderFooter();
 
-    if (pageId === "page-home") renderHome();
     if (pageId === "page-products") renderProducts();
     if (pageId === "page-blog") renderBlogs();
     if (pageId === "page-contact") renderContact();
 });
 
-// 1. 动态注入 SEO Meta 标签
 function initSEO(pageId) {
-    let title = siteData.brand.name;
-    let desc = "领先的工程机械底盘件制造商。提供优质履带、支重轮、引导轮和驱动齿，适配CAT、Komatsu等机型。";
+    let title = siteData.brand.name + " | Premium Undercarriage Parts";
+    let desc = "Leading manufacturer of heavy machinery undercarriage parts. Supplying high-quality track chains, rollers, idlers, and sprockets for CAT, Komatsu, Volvo, etc.";
     
-    if (pageId === "page-products") { title = "底盘件产品目录 | " + siteData.brand.name; }
-    if (pageId === "page-blog") { title = "技术支持与维修博客 | " + siteData.brand.name; }
-    if (pageId === "page-contact") { title = "联系我们 | " + siteData.brand.name; }
+    if (pageId === "page-products") { title = "Undercarriage Products Catalog | " + siteData.brand.name; }
+    if (pageId === "page-blog") { title = "Technical Support & Blog | " + siteData.brand.name; }
+    if (pageId === "page-contact") { title = "Contact Us | " + siteData.brand.name; }
 
     document.title = title;
     
-    // 注入 Meta
     const head = document.head;
     const metaDesc = document.createElement('meta');
     metaDesc.name = "description";
@@ -136,13 +132,12 @@ function initSEO(pageId) {
     head.appendChild(metaKey);
 }
 
-// 2. 渲染顶部导航栏 (融合 CAT 黄与 Komatsu 蓝配色)
 function renderHeader() {
     const headerHtml = `
         <div class="bg-[#111111] text-white">
-            <div class="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center text-sm border-b border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 py-2 flex flex-wrap justify-between items-center text-sm border-b border-gray-800">
                 <div><span>&#9993;</span> ${siteData.contact.email}</div>
-                <div><span>&#9742;</span> 24/7 Support: <span class="text-[#FDB813] font-bold">${siteData.contact.phone}</span></div>
+                <div><span>&#9742;</span> Global Sales: <span class="text-[#FDB813] font-bold">${siteData.contact.phone}</span></div>
             </div>
             <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
                 <a href="index.html" class="flex items-center gap-3">
@@ -158,28 +153,27 @@ function renderHeader() {
     document.getElementById("global-header").innerHTML = headerHtml;
 }
 
-// 3. 渲染底部版权区
 function renderFooter() {
     const footerHtml = `
         <footer class="bg-[#0A0A0A] text-gray-400 py-12 border-t-4 border-[#0033A0]">
             <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
-                    <h3 class="text-xl font-bold text-white mb-4">关于 ${siteData.brand.shortName}</h3>
-                    <p class="text-sm leading-relaxed mb-4">专注高品质工程机械底盘件供应链，采用原厂锻造工艺，全流程热处理品控，为您的重型设备提供极具性价比的强劲支撑。</p>
+                    <h3 class="text-xl font-bold text-white mb-4">About ${siteData.brand.shortName}</h3>
+                    <p class="text-sm leading-relaxed mb-4">Dedicated to a high-quality undercarriage supply chain. Utilizing OEM forging processes and comprehensive heat treatment quality control to provide extreme durability for heavy machinery.</p>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold text-white mb-4">产品分类</h3>
+                    <h3 class="text-xl font-bold text-white mb-4">Quick Links</h3>
                     <ul class="space-y-2 text-sm">
                         ${siteData.categories.map(cat => `<li><a href="products.html#${cat.id}" class="hover:text-[#FDB813] transition">> ${cat.title}</a></li>`).join('')}
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold text-white mb-4">全球联络处</h3>
+                    <h3 class="text-xl font-bold text-white mb-4">Global Contact</h3>
                     <ul class="space-y-2 text-sm">
                         <li>📍 ${siteData.contact.address}</li>
-                        <li>📞 销售热线: ${siteData.contact.phone}</li>
-                        <li>📱 WhatsApp: ${siteData.contact.whatsapp}</li>
-                        <li>📧 邮箱: ${siteData.contact.email}</li>
+                        <li>📠 Fax: ${siteData.contact.fax}</li>
+                        <li>📞 Phone: ${siteData.contact.phone}</li>
+                        <li>📧 Email: ${siteData.contact.email}</li>
                     </ul>
                 </div>
             </div>
@@ -191,7 +185,6 @@ function renderFooter() {
     document.getElementById("global-footer").innerHTML = footerHtml;
 }
 
-// 4. 各个页面的具体渲染逻辑
 function renderProducts() {
     let html = '';
     siteData.categories.forEach(cat => {
@@ -201,15 +194,15 @@ function renderProducts() {
                 <p class="text-gray-600 mb-8">${cat.desc}</p>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     ${cat.products.map(p => `
-                        <div class="bg-white border border-gray-200 shadow-sm hover:shadow-xl transition group">
+                        <div class="bg-white border border-gray-200 shadow-sm hover:shadow-xl transition group flex flex-col">
                             <div class="h-56 overflow-hidden bg-gray-100">
                                 <img src="${p.img}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 grayscale group-hover:grayscale-0">
                             </div>
-                            <div class="p-6">
+                            <div class="p-6 flex-grow flex flex-col">
                                 <h3 class="text-xl font-bold text-[#0033A0] mb-2">${p.name}</h3>
-                                <p class="text-gray-600 text-sm mb-4 h-10">${p.desc}</p>
+                                <p class="text-gray-600 text-sm mb-4 flex-grow">${p.desc}</p>
                                 <div class="bg-gray-50 p-3 text-xs text-gray-700 border-l-2 border-[#111] font-mono mb-4">${p.specs}</div>
-                                <a href="contact.html" class="block w-full text-center bg-[#111] text-white py-2 hover:bg-[#FDB813] hover:text-[#111] font-bold transition">获取最新报价</a>
+                                <a href="mailto:${siteData.contact.email}?subject=Inquiry about ${p.name}" class="block w-full text-center bg-[#111] text-white py-2 hover:bg-[#FDB813] hover:text-[#111] font-bold transition uppercase text-sm">Request Quote</a>
                             </div>
                         </div>
                     `).join('')}
@@ -242,29 +235,43 @@ function renderBlogs() {
     document.getElementById("blog-container").innerHTML = html;
 }
 
+// 修改点：去除了表单，改为大气、清晰的公司联络名片排版
 function renderContact() {
     const html = `
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div class="bg-white p-8 shadow-lg border-t-8 border-[#FDB813]">
-                <h2 class="text-3xl font-black mb-6 text-[#111]">获取零件报价</h2>
-                <form class="space-y-4">
-                    <div><label class="block text-sm font-bold text-gray-700 mb-1">您的姓名 / Name</label><input type="text" class="w-full border border-gray-300 p-3 focus:border-[#0033A0] focus:ring-1 focus:ring-[#0033A0] outline-none"></div>
-                    <div><label class="block text-sm font-bold text-gray-700 mb-1">电子邮件 / Email</label><input type="email" class="w-full border border-gray-300 p-3 focus:border-[#0033A0] outline-none"></div>
-                    <div><label class="block text-sm font-bold text-gray-700 mb-1">所需配件与机型 (例如: CAT 320C 支重轮)</label><textarea class="w-full border border-gray-300 p-3 h-32 focus:border-[#0033A0] outline-none"></textarea></div>
-                    <button type="button" class="w-full bg-[#0033A0] text-white font-bold text-lg py-4 hover:bg-[#111] transition">发送询价单 (SEND)</button>
-                </form>
+        <div class="max-w-4xl mx-auto bg-white p-10 md:p-16 shadow-2xl border-t-8 border-[#FDB813] rounded-sm">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-black text-[#111] uppercase tracking-wide">Global Supply Center</h2>
+                <p class="text-gray-500 mt-2 font-semibold">Get in touch with our experts for pricing and availability.</p>
             </div>
-            <div class="bg-[#111] text-white p-8 flex flex-col justify-center">
-                <h2 class="text-3xl font-black mb-8 text-[#FDB813]">全球直供网络</h2>
-                <div class="space-y-6 text-lg">
-                    <p class="flex items-center gap-4"><span class="w-12 h-12 bg-gray-800 flex items-center justify-center rounded-full text-[#FDB813]">&#9742;</span> ${siteData.contact.phone}</p>
-                    <p class="flex items-center gap-4"><span class="w-12 h-12 bg-gray-800 flex items-center justify-center rounded-full text-[#FDB813]">📱</span> WhatsApp: ${siteData.contact.whatsapp}</p>
-                    <p class="flex items-center gap-4"><span class="w-12 h-12 bg-gray-800 flex items-center justify-center rounded-full text-[#FDB813]">&#9993;</span> ${siteData.contact.email}</p>
-                    <p class="flex items-center gap-4"><span class="w-12 h-12 bg-gray-800 flex items-center justify-center rounded-full text-[#FDB813]">📍</span> ${siteData.contact.address}</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="bg-gray-50 p-6 border-l-4 border-[#0033A0]">
+                    <h3 class="text-sm text-gray-400 font-bold uppercase tracking-wider mb-4">Headquarters</h3>
+                    <div class="flex items-start gap-4 mb-4">
+                        <span class="text-2xl">📍</span>
+                        <p class="text-gray-800 font-medium leading-relaxed">${siteData.contact.address}<br><span class="text-gray-500 text-sm">Zip Code: ${siteData.contact.zipcode}</span></p>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-6 border-l-4 border-[#FDB813]">
+                    <h3 class="text-sm text-gray-400 font-bold uppercase tracking-wider mb-4">Direct Contact</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl">📞</span>
+                            <p class="text-gray-800 font-bold text-lg">${siteData.contact.phone}</p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl">📠</span>
+                            <p class="text-gray-800 font-medium text-lg">Fax: ${siteData.contact.fax}</p>
+                        </div>
+                        <div class="flex items-center gap-4 mt-2 pt-4 border-t border-gray-200">
+                            <span class="text-2xl">✉️</span>
+                            <a href="mailto:${siteData.contact.email}" class="text-[#0033A0] hover:text-[#FDB813] font-bold text-lg transition">${siteData.contact.email}</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     `;
     document.getElementById("contact-container").innerHTML = html;
-
 }
