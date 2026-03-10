@@ -2,24 +2,35 @@
 // Global Data and Control Center
 
 const siteData = {
-    // 1. Basic Info & SEO
+    // 1. Basic Info & SEO & Logo Control
     brand: {
-        name: "Haiyi Machinery - 泉州海逸机械有限公司",
+        name: "Haiyi Machinery",
         shortName: "Haiyi Parts",
-        logoText: "Haiyi Machinery",
-        themeColor: "#FDB813", // CAT Yellow
-        accentColor: "#0033A0", // Komatsu Blue
+        
+        // --- Logo 设置区 ---
+        // 模式一：纯文字拼装 Logo（目前正在使用的模式）
+        logoLetter: "H",                 // 黄色方块里的首字母
+        logoText: "Haiyi Machinery",     // 主标题
+        logoSuffix: ".PARTS",            // 蓝色的后缀（如果不需要，可以改成 "" 留空）
+        
+        // 模式二：真实图片 Logo（如果你有设计好的图片Logo，把图片路径填在这里）
+        // 示例: "images/logo.png" 或者 "https://你的域名.com/logo.png"
+        // 注意：一旦这里填了内容，上面的文字 Logo 就会自动隐藏，转而显示这张图片。
+        logoImage: "", 
+
+        themeColor: "#FDB813", // CAT Yellow (主色调)
+        accentColor: "#0033A0", // Komatsu Blue (点缀色)
     },
     seo: {
         defaultKeywords: "Excavator parts, Undercarriage parts, Track rollers, Track chains, Sprockets, Heavy machinery, Quanzhou undercarriage",
-        author: "quanzhou Haiyi Machinery"
+        author: "Haiyi Engineering Team"
     },
     contact: {
         address: "Pudang Industrial Zone, Xiamei, Nan'an, Quanzhou, Fujian Province, China",
         zipcode: "362000",
         phone: "0595-86769058 / +86 13506029588",
         fax: "0595-86769058",
-        email: "info@qzhaiyi.com"
+        email: "sales@haiyiparts.com" // 这里你可以改成你真实的域名邮箱
     },
     navigation: [
         { name: "HOME", url: "index.html" },
@@ -133,6 +144,17 @@ function initSEO(pageId) {
 }
 
 function renderHeader() {
+    // 智能判断：如果填写了图片Logo链接，就显示图片；否则显示文字拼装Logo
+    let logoHtml = '';
+    if (siteData.brand.logoImage !== "") {
+        logoHtml = `<img src="${siteData.brand.logoImage}" alt="${siteData.brand.name} Logo" class="h-10 object-contain">`;
+    } else {
+        logoHtml = `
+            <div class="w-10 h-10 bg-[#FDB813] flex items-center justify-center font-black text-black text-2xl skew-x-[-10deg]">${siteData.brand.logoLetter}</div>
+            <span class="text-2xl font-black tracking-tight">${siteData.brand.logoText}<span class="text-[#0033A0]">${siteData.brand.logoSuffix}</span></span>
+        `;
+    }
+
     const headerHtml = `
         <div class="bg-[#111111] text-white">
             <div class="max-w-7xl mx-auto px-4 py-2 flex flex-wrap justify-between items-center text-sm border-b border-gray-800">
@@ -141,8 +163,7 @@ function renderHeader() {
             </div>
             <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
                 <a href="index.html" class="flex items-center gap-3">
-                    <div class="w-10 h-10 bg-[#FDB813] flex items-center justify-center font-black text-black text-2xl skew-x-[-10deg]">S</div>
-                    <span class="text-2xl font-black tracking-tight">${siteData.brand.logoText}<span class="text-[#0033A0]">.PARTS</span></span>
+                    ${logoHtml}
                 </a>
                 <nav class="hidden md:flex space-x-8 font-bold text-gray-300">
                     ${siteData.navigation.map(nav => `<a href="${nav.url}" class="hover:text-[#FDB813] transition border-b-2 border-transparent hover:border-[#FDB813] pb-1">${nav.name}</a>`).join('')}
@@ -235,7 +256,6 @@ function renderBlogs() {
     document.getElementById("blog-container").innerHTML = html;
 }
 
-// 修改点：去除了表单，改为大气、清晰的公司联络名片排版
 function renderContact() {
     const html = `
         <div class="max-w-4xl mx-auto bg-white p-10 md:p-16 shadow-2xl border-t-8 border-[#FDB813] rounded-sm">
@@ -275,5 +295,3 @@ function renderContact() {
     `;
     document.getElementById("contact-container").innerHTML = html;
 }
-
-
