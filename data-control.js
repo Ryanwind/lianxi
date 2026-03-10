@@ -4,9 +4,9 @@
 const siteData = {
     // 1. Basic Info & SEO
     brand: {
-        name: "SolidTrack Machinery",
-        shortName: "STM Parts",
-        logoText: "SOLIDTRACK",
+        name: "Haiyi Machinery - 泉州海逸机械有限公司",
+        shortName: "Haiyi Parts",
+        logoText: "Haiyi Machinery",
         themeColor: "#FDB813", // CAT Yellow
         accentColor: "#0033A0", // Komatsu Blue
     },
@@ -19,7 +19,7 @@ const siteData = {
         zipcode: "362000",
         phone: "0595-86769058 / +86 13506029588",
         fax: "0595-86769058",
-        email: "sales@solidtrack-parts.com"
+        email: "info@qzhaiyi.com"
     },
     navigation: [
         { name: "HOME", url: "index.html" },
@@ -275,3 +275,4 @@ function renderContact() {
     `;
     document.getElementById("contact-container").innerHTML = html;
 }
+
