@@ -12,7 +12,7 @@ const siteData = {
     },
     seo: {
         defaultKeywords: "Excavator parts, Undercarriage parts, Track rollers, Track chains, Sprockets, Heavy machinery, Quanzhou undercarriage",
-        author: "SolidTrack Engineering Team"
+        author: "quanzhou Haiyi Machinery"
     },
     contact: {
         address: "Pudang Industrial Zone, Xiamei, Nan'an, Quanzhou, Fujian Province, China",
@@ -275,4 +275,5 @@ function renderContact() {
     `;
     document.getElementById("contact-container").innerHTML = html;
 }
+
 
