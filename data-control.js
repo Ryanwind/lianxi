@@ -4,7 +4,7 @@
 const siteData = {
     // 1. 基础信息与 SEO 设置
     brand: {
-        name: "SolidTrack Machinery",
+        name: "海逸工程机械 Machinery",
         shortName: "STM Parts",
         logoText: "SOLIDTRACK",
         themeColor: "#FDB813", // CAT黄
@@ -266,4 +266,5 @@ function renderContact() {
         </div>
     `;
     document.getElementById("contact-container").innerHTML = html;
+
 }
